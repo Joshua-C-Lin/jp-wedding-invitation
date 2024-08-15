@@ -3,17 +3,6 @@ body {
   background: black;
 }
 
-@keyframes sticky-header {
-  from {
-    height: 100vh;
-    font-size: calc(10vw + 1rem);
-  }
-  to {
-    height: 10vh;
-    font-size: 2rem;
-  }
-}
-
 #main-section {
   background-image: url('./image/p17.jpeg');
   background-size: cover;
@@ -22,11 +11,14 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  min-height: 124px;
-  height: max-content;
-  animation: sticky-header linear both;
-  animation-timeline: scroll();
-  animation-range: 0vh 100vh;
+  height: 100vh;
+  min-height: 140px;
+  transition: height 0.5s, font-size 0.5s;
+}
+
+#main-section.shrunk {
+  height: 14vh;
+  font-size: 2rem;
 }
 
 #main-section .overlay {
@@ -45,6 +37,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   font-size: 6rem;
+  padding-bottom: 2rem;
   color: white;
   top: 50%;
   left: 50%;
@@ -52,17 +45,6 @@ body {
   text-align: center;
   text-shadow: 0 0 5px #fff8e7, 0 0 10px #fff8e7, 0 0 15px #fff8e7, 0 0 20px #fff8e7, 0 0 25px #fff8e7, 0 0 30px #fff8e7, 0 0 35px #fff8e7;
   animation: neon 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neon {
-  0% {
-    text-shadow: 0 0 5px #fff8e7, 0 0 10px #fff8e7, 0 0 15px #fff8e7, 0 0 20px #fff8e7, 0 0 25px #fff8e7, 0 0 30px #fff8e7, 0 0 35px #fff8e7;
-    border-color: #fff8e7;
-  }
-  100% {
-    text-shadow: 0 0 10px #ffe4b5, 0 0 20px #ffe4b5, 0 0 30px #ffe4b5, 0 0 40px #ffe4b5, 0 0 50px #ffe4b5, 0 0 60px #ffe4b5, 0 0 70px #ffe4b5;
-    border-color: #ffe4b5;
-  }
 }
 
 .down-arrow {
@@ -81,25 +63,11 @@ body {
   display: none;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-}
-
-
 #section-1 {
   height: 100vh;
   background: black;
   border: 1px solid red;
-  margin: auto;
-  margin-top: calc(110vh);
+  margin-top: 110vh;
   padding: 2rem 1rem;
   text-align: justify;
 }
@@ -111,20 +79,18 @@ body {
 }
 
 @media (max-width: 767px) {
+  #main-section {
+    min-height: 84px;
+  }
   .text-area {
-    font-size: 5rem;
+    font-size: 3rem;
     width: 100%;
+
+    padding-bottom: 0!important;
   }
 
-  @keyframes sticky-header-mobile {
-    from {
-      height: 100vh;
-      font-size: calc(8vw + 1rem);
-    }
-    to {
-      height: 20vh;
-      font-size: 1.5rem;
-    }
+  #main-section.shrunk {
+    height: 10vh!important;
+    font-size: 4rem;
   }
 }
-

@@ -7,24 +7,14 @@ function checkHeaderHeight() {
   const header = document.getElementById('main-section');
   const downArrow = document.querySelector('.down-arrow');
   
-  if (header.offsetHeight < window.innerHeight) {
+  if (window.scrollY > 0) {
+    header.classList.add('shrunk');
     downArrow.classList.add('hidden');
   } else {
+    header.classList.remove('shrunk');
     downArrow.classList.remove('hidden');
   }
 }
 
-function adjustHeaderHeight() {
-  const mainSection = document.getElementById('main-section');
-  const viewportHeight = window.innerHeight;
-
-  mainSection.style.height = `${viewportHeight}px`;
-  
-  checkHeaderHeight();
-}
-
-window.addEventListener('load', adjustHeaderHeight);
-
+window.addEventListener('load', checkHeaderHeight);
 window.addEventListener('scroll', checkHeaderHeight);
-
-window.addEventListener('resize', adjustHeaderHeight);
