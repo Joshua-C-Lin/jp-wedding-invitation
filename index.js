@@ -7,7 +7,6 @@ function checkHeaderHeight() {
   const header = document.getElementById('main-section');
   const downArrow = document.querySelector('.down-arrow');
   
-  // 检查 header 的高度是否小于 100vh
   if (header.offsetHeight < window.innerHeight) {
     downArrow.classList.add('hidden');
   } else {

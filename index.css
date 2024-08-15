@@ -23,6 +23,7 @@ body {
   top: 0;
   width: 100%;
   min-height: 124px;
+  height: max-content;
   animation: sticky-header linear both;
   animation-timeline: scroll();
   animation-range: 0vh 100vh;
@@ -111,12 +112,8 @@ body {
 
 @media (max-width: 767px) {
   .text-area {
-    /* top: 50%; */
     font-size: 5rem;
-  }
-
-  #main-section {
-    animation: sticky-header-mobile linear both;
+    width: 100%;
   }
 
   @keyframes sticky-header-mobile {
