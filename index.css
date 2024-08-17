@@ -7,7 +7,6 @@ body {
   background-image: url('./image/p17.jpeg');
   background-size: cover;
   background-position: center center;
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -38,7 +37,7 @@ body {
   z-index: 2;
   font-size: 6rem;
   padding-bottom: 2rem;
-  color: white;
+  color: black;
   top: 50%;
   left: 50%;
   font-family: 'Grey Qo', sans-serif;
@@ -46,6 +45,17 @@ body {
   text-shadow: 0 0 5px #fff8e7, 0 0 10px #fff8e7, 0 0 15px #fff8e7, 0 0 20px #fff8e7, 0 0 25px #fff8e7, 0 0 30px #fff8e7, 0 0 35px #fff8e7;
   animation: neon 1.5s ease-in-out infinite alternate;
 }
+
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #f5f5dc, 0 0 30px #f5f5dc, 0 0 35px #f5f5dc, 0 0 40px #f5f5dc;
+  }
+  100% {
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #e0cda9, 0 0 30px #e0cda9, 0 0 35px #e0cda9, 0 0 40px #e0cda9;
+  }
+}
+
 
 .down-arrow {
   position: absolute;
@@ -68,7 +78,7 @@ body {
   background: black;
   border: 1px solid red;
   margin-top: 110vh;
-  padding: 2rem 1rem;
+  padding: 8.75rem 1rem 2rem;
   text-align: justify;
 }
 
